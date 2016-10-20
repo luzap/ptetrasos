@@ -6,7 +6,20 @@ On Windows and Unix systems, build by using the `gradlew` or `gradlew.bat` respe
 ```bash
 gradlew superDev
 ```
-will launch a development server.
+will launch a development server. Note that the first time compilation takes significantly longer than subsequent ones.
 
 ## TODO
-- Goals
+-[ ] Rendering and position systems
+  -[ ] Changing size based on y position (tentative)
+  -[ ] Conversion of coordinates between 2D orthogonal and chosen view angle
+  -[ ] Recursively loading assets via AssetManager
+  -[ ] Shader applications
+-[ ] Level rendering
+  -[ ] Filetype and order of layers
+  -[ ] Dynamic background
+-[ ] Player interactions
+  -[ ] Movement
+  -[ ] Interaction with in-game objects
+  -[ ] Dialogue
+  -[ ] Choice mechanic with *biased* cursor
+
