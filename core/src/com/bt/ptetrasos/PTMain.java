@@ -39,7 +39,7 @@ public class PTMain extends Game {
 		Constants.game = this;
         Gdx.app.debug("Info", "Assets loading");
 
-        assetManager.load("img//badlogic.jpg", Texture.class);
+        assetManager.load("img/badlogic.jpg", Texture.class);
         assetManager.finishLoading(); // NEVER forget to call this guy to finish loading
         Gdx.app.debug("Info", "Assets loaded");
         showMenuScreen();
@@ -47,7 +47,7 @@ public class PTMain extends Game {
 
 	@Override
     public void render() {
-        Texture tex = assetManager.get("img//badlogic.jpg", Texture.class);
+        Texture tex = assetManager.get("img/badlogic.jpg", Texture.class);
         batch.begin();
         batch.draw(tex, 0, 0);
         batch.end();
