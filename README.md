@@ -6,7 +6,7 @@ On Windows and Unix systems, build by using the `gradlew` or `gradlew.bat` respe
 ```bash
 gradlew superDev
 ```
-will launch a development server. Note that the first time compilation takes significantly longer than subsequent ones.
+will launch a development server on port 8080 (not 9741 as Gradle claims). Note that the first time compilation takes significantly longer than subsequent ones.
 
 ## TODO
 - [ ] Rendering and position systems
