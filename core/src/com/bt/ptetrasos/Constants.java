@@ -1,6 +1,7 @@
 package com.bt.ptetrasos;
 
 import com.artemis.World;
+import com.badlogic.gdx.assets.AssetManager;
 
 /**
  * Class that stores important constants.
@@ -18,4 +19,6 @@ public class Constants {
 
     public static int WIDTH = 640;
     public static int HEIGHT = 480;
+
+    public static AssetManager assets;
 }

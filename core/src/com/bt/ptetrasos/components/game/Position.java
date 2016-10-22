@@ -13,8 +13,8 @@ public class Position extends Component{
     private static float y;
 
     public Position(float x, float y) {
-        this.x = x;
-        this.y = y;
+        Position.x = x;
+        Position.y = y;
     }
 
     public static float getX() {

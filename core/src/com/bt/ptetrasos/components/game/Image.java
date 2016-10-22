@@ -22,6 +22,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 public class Image extends Component{
 
     private Sprite image;
+    private int layer;
 
     public int getLayer() {
         return layer;
@@ -35,7 +36,6 @@ public class Image extends Component{
         this.image = image;
     }
 
-    private int layer;
 
     public Image(Sprite image) {
         this.image = image;
