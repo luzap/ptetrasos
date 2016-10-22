@@ -4,11 +4,8 @@ import com.artemis.World;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.bt.ptetrasos.screens.MenuScreen;
-
 /**
  * The PTMain is the entry point for the desktop and HTML versions, making it the only class that is instantiated
  * externally. As such, it contains the AssetManager, which handles the loading of all assets (synchronously and
@@ -27,7 +24,6 @@ import com.bt.ptetrasos.screens.MenuScreen;
 public class PTMain extends Game {
 
     World world;
-    AssetManager assetManager = new AssetManager();
     SpriteBatch batch;
 
 
@@ -37,24 +33,15 @@ public class PTMain extends Game {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		Gdx.graphics.setWindowedMode(640, 480);
 		Constants.game = this;
-        Gdx.app.debug("Info", "Assets loading");
 
-        assetManager.load("img/badlogic.jpg", Texture.class);
-        assetManager.finishLoading(); // NEVER forget to call this guy to finish loading
-        Gdx.app.debug("Info", "Assets loaded");
         showMenuScreen();
 	}
 
 	@Override
     public void render() {
-        Texture tex = assetManager.get("img/badlogic.jpg", Texture.class);
-        batch.begin();
-        batch.draw(tex, 0, 0);
-        batch.end();
-	}
+    }
 
     // Simple format for switching between screens
 	public void showMenuScreen() {setScreen(new MenuScreen(this));}
-
 
 }
