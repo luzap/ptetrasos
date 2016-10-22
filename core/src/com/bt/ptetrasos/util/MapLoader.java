@@ -8,13 +8,13 @@ import java.io.IOException;
  */
 public class MapLoader {
 
-    FileReader input = null;
-    String[] raw;
-    MapObject map;
+    static FileReader input = null;
+    static String[] raw;
+    static MapObject map;
 
 
 
-    public MapObject readFile(String file) throws IOException {
+    public static MapObject readFile(String file) throws IOException {
         input = new FileReader(file);
         raw = input.toString().split(",");
         map = new MapObject(Float.parseFloat(raw[0]), Float.parseFloat(raw[1]), Float.parseFloat(raw[2]),
