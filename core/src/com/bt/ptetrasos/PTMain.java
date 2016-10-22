@@ -5,8 +5,10 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.bt.ptetrasos.screens.GameScreen;
 import com.bt.ptetrasos.screens.MenuScreen;
 
 /**
@@ -35,23 +37,28 @@ public class PTMain extends Game {
 	public void create() {
         batch = new SpriteBatch();
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		Gdx.graphics.setWindowedMode(640, 480);
-		Constants.game = this;
+		Gdx.graphics.setWindowedMode(800, 600);
+
+        Constants.assets = assetManager;
+
+
         Gdx.app.debug("Info", "Assets loading");
-
-        assetManager.load("img/badlogic.jpg", Texture.class);
-        assetManager.finishLoading(); // NEVER forget to call this guy to finish loading
+        Constants.assets.load("img/room/Room-Background.png", Texture.class);
+        Constants.assets.load("img/room/Room-BackWall.png", Texture.class);
+        Constants.assets.load("img/room/Room-Floor.png", Texture.class);
+        Constants.assets.finishLoading(); // NEVER forget to call this guy to finish loading
         Gdx.app.debug("Info", "Assets loaded");
-        showMenuScreen();
+
+        System.out.println(Constants.assets.getAssetNames());
+
+        Constants.game = this;
+
+
+        setScreen(new GameScreen(this));
+
 	}
 
-	@Override
-    public void render() {
-        Texture tex = assetManager.get("img/badlogic.jpg", Texture.class);
-        batch.begin();
-        batch.draw(tex, 0, 0);
-        batch.end();
-	}
+
 
     // Simple format for switching between screens
 	public void showMenuScreen() {setScreen(new MenuScreen(this));}

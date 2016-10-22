@@ -1,6 +1,7 @@
 package com.bt.ptetrasos.components.game;
 
 import com.artemis.Component;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
 /**
@@ -37,7 +38,7 @@ public class Image extends Component{
 
     private int layer;
 
-    public Image(Sprite image) {
+    public Image(Texture texture) {
         this.image = image;
     }
 

@@ -7,6 +7,9 @@ package com.bt.ptetrasos.systems;
 import com.artemis.BaseSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.Map;
+import com.bt.ptetrasos.Constants;
+import com.bt.ptetrasos.components.game.Position;
+import com.bt.ptetrasos.util.GameEntitySpawner;
 
 
 import java.util.HashMap;
@@ -40,6 +43,7 @@ public class GameWorldMapSystem extends BaseSystem {
         // add all of the maps and their reference names here
         addMap("test", "testmap.txt");
         setActiveMap(activeMapName);
+        isSetup = false;
         Gdx.app.debug(TAG, "Initialized with map: " + activeMapName);
     }
 
@@ -59,6 +63,11 @@ public class GameWorldMapSystem extends BaseSystem {
 
         if ( !isSetup )
         {
+            System.out.print("FU");
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-Floor.png", 1);
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-Background.png", 0);
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-BackWall.png", 2);
+            Gdx.app.debug("px", Position.class.toString());
             isSetup = true;
         }
     }
