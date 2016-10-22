@@ -23,6 +23,20 @@ public class Image extends Component{
 
     private Sprite image;
 
+    public int getLayer() {
+        return layer;
+    }
+
+    public void setLayer(int layer) {
+        this.layer = layer;
+    }
+
+    public void setImage(Sprite image) {
+        this.image = image;
+    }
+
+    private int layer;
+
     public Image(Sprite image) {
         this.image = image;
     }

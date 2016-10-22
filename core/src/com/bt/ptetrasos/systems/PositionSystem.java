@@ -2,6 +2,8 @@ package com.bt.ptetrasos.systems;
 
 import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
+import com.artemis.systems.IteratingSystem;
+import com.bt.ptetrasos.components.game.Position;
 
 /**
  * The PositionSystem (tentative) will convert between the 2D orthogonal coordinates that LibGDX uses internally, and
@@ -9,18 +11,21 @@ import com.artemis.BaseEntitySystem;
  */
 
 
-public class PositionSystem extends BaseEntitySystem {
+public class PositionSystem extends IteratingSystem {
 
     public PositionSystem() {
-        super(Aspect.all()); // This Aspect business is apparently necessary
+        super(Aspect.all(Position.class));
     }
 
     protected void insert() {}
 
     protected void removed() {}
 
+
     @Override
-    protected void processSystem() {
+    protected void process(int e) {
 
     }
+
+
 }
