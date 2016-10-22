@@ -3,8 +3,8 @@ package com.bt.ptetrasos.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-
-import com.badlogic.gdx.backends.gwt.preloader.Preloader.*;
+import com.badlogic.gdx.backends.gwt.preloader.Preloader.PreloaderCallback;
+import com.badlogic.gdx.backends.gwt.preloader.Preloader.PreloaderState;
 import com.bt.ptetrasos.PTMain;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
@@ -16,7 +16,12 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public GwtApplicationConfiguration getConfig () {
-                return new GwtApplicationConfiguration(480, 320);
+            GwtApplicationConfiguration gwt = new GwtApplicationConfiguration(480, 320);
+            gwt.alpha = false;
+            gwt.useDebugGL = true;
+            gwt.preferFlash = false;
+
+            return gwt;
         }
 
         @Override
