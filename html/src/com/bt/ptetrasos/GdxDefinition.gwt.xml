@@ -9,4 +9,6 @@
 	<entry-point class='com.bt.ptetrasos.client.HtmlLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../core/assets/" />
+	<extend-configuration-property name="artemis.reflect.include" value="com.bt.ptetrasos.components" />
+	<extend-configuration-property name="artemis.reflect.include" value="com.bt.ptetrasos.systems" />
 </module>

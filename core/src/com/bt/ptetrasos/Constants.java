@@ -17,8 +17,8 @@ public class Constants {
 
     public static PTMain game;
 
-    public static int WIDTH = 640;
-    public static int HEIGHT = 480;
-
     public static AssetManager assets;
+
+    public static int WIDTH = 800;
+    public static int HEIGHT = 600;
 }
