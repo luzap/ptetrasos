@@ -39,6 +39,8 @@ public class PTMain extends Game {
 	public void create() {
         // If not on web, generates list of resources. Workaround for the glitchy behaviour of the AssetManager
         // in GWT.
+
+        // Currently commented out since some types are not implemented
         //if (Gdx.app.getType() != Application.ApplicationType.WebGL) {new GenFileListing("listing.txt");}
 
 

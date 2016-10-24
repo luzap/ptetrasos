@@ -35,6 +35,10 @@ public class GenFileListing {
     }
 
     private void getFilesFromDir(String dir) {
+        /**
+         * Recursively look through directories for files.
+         * @param dir directory that the object is looking through
+         */
         FileHandle directory = new FileHandle(dir);
         FileHandle[] filesInDir = directory.list();
         for (FileHandle file: filesInDir) {
