@@ -5,11 +5,10 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.bt.ptetrasos.screens.GameScreen;
 import com.bt.ptetrasos.screens.MenuScreen;
+import com.bt.ptetrasos.util.AssetLoader;
 
 /**
  * The PTMain is the entry point for the desktop and HTML versions, making it the only class that is instantiated
@@ -24,41 +23,44 @@ import com.bt.ptetrasos.screens.MenuScreen;
  * of logging errors as well as extraneous information. This can be done via Gdx.app.debug(TAG (String), DESCRIPTION
  * (String)). This will be pushed to the console, bypassing the need for print statements, and will only be shown
  * if the log level is set to debug, reducing the effort make for debugging.
+ *
+ * IMPORTANT: For file loading to work, run the desktop version first.
  */
 
 public class PTMain extends Game {
 
     World world;
-    AssetManager assetManager = new AssetManager();
     SpriteBatch batch;
+    AssetManager assets;
+    Texture loadThatShit;
 
 
 	@Override
 	public void create() {
+        // If not on web, generates list of resources. Workaround for the glitchy behaviour of the AssetManager
+        // in GWT.
+        //if (Gdx.app.getType() != Application.ApplicationType.WebGL) {new GenFileListing("listing.txt");}
+
+
         batch = new SpriteBatch();
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		Gdx.graphics.setWindowedMode(800, 600);
 
-        Constants.assets = assetManager;
-
-
-        Gdx.app.debug("Info", "Assets loading");
-        Constants.assets.load("img/room/Room-Background.png", Texture.class);
-        Constants.assets.load("img/room/Room-BackWall.png", Texture.class);
-        Constants.assets.load("img/room/Room-Floor.png", Texture.class);
-        Constants.assets.finishLoading(); // NEVER forget to call this guy to finish loading
-        Gdx.app.debug("Info", "Assets loaded");
-
-        System.out.println(Constants.assets.getAssetNames());
+        AssetLoader assetLoader = new AssetLoader();
+        assets = assetLoader.getAssetManager();
 
         Constants.game = this;
 
-
-        setScreen(new GameScreen(this));
-
+        //setScreen(new GameScreen(this));
 	}
 
-
+    @Override
+    public void render() {
+        Texture trial = assets.get("img/room/roombackground.png");
+        batch.begin();
+        batch.draw(trial, 0, 0);
+        batch.end();
+    }
 
     // Simple format for switching between screens
 	public void showMenuScreen() {setScreen(new MenuScreen(this));}

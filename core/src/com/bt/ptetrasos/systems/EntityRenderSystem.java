@@ -2,17 +2,13 @@ package com.bt.ptetrasos.systems;
 
 import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
-import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.bt.ptetrasos.Constants;
-import com.bt.ptetrasos.components.game.*;
-import com.bt.ptetrasos.util.AnimationMaker;
+import com.bt.ptetrasos.components.game.Anim;
+import com.bt.ptetrasos.components.game.Bounds;
+import com.bt.ptetrasos.components.game.Position;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,11 +95,11 @@ public class EntityRenderSystem extends BaseEntitySystem{
 
         Anim anim = animationCm.get(e);
 
-        if (animationCm.get(e).getAnimation() == null) {
-            Texture texture = Constants.assets.get(anim.getAnimationReference());
-            Animation animation = AnimationMaker.spriteSheetToAnimation(texture, 1, 1, 1);
-            anim.setAnimation(animation);
-        }
+//        if (animationCm.get(e).getAnimation() == null) {
+//            Texture texture = Constants.assets.get(anim.getAnimationReference());
+//            Animation animation = AnimationMaker.spriteSheetToAnimation(texture, 1, 1, 1);
+//            anim.setAnimation(animation);
+//        }
 
         TextureRegion currentFrame = anim.getAnimation().getKeyFrame(anim.getAge());
 
