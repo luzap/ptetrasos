@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.bt.ptetrasos.screens.GameScreen;
 import com.bt.ptetrasos.screens.MenuScreen;
 import com.bt.ptetrasos.util.AssetLoader;
 
@@ -24,7 +25,7 @@ import com.bt.ptetrasos.util.AssetLoader;
  * (String)). This will be pushed to the console, bypassing the need for print statements, and will only be shown
  * if the log level is set to debug, reducing the effort make for debugging.
  *
- * IMPORTANT: For file loading to work, run the desktop version first.
+ * IMPORTANT: For file loading to work, run GenFileListing first.
  */
 
 public class PTMain extends Game {
@@ -32,17 +33,10 @@ public class PTMain extends Game {
     World world;
     SpriteBatch batch;
     AssetManager assets;
-    Texture loadThatShit;
 
 
 	@Override
 	public void create() {
-        // If not on web, generates list of resources. Workaround for the glitchy behaviour of the AssetManager
-        // in GWT.
-
-        if (Gdx.app.getType() != Application.ApplicationType.WebGL) {new GenFileListing("listing.txt");}
-
-
         batch = new SpriteBatch();
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		Gdx.graphics.setWindowedMode(800, 600);
@@ -52,7 +46,7 @@ public class PTMain extends Game {
 
         Constants.game = this;
 
-        //setScreen(new GameScreen(this));
+        setScreen(new GameScreen(this));
 	}
 
     @Override

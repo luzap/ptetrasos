@@ -1,9 +1,9 @@
 package com.bt.ptetrasos.screens;
 
+import com.artemis.World;
 import com.artemis.WorldConfiguration;
 import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Game;
-import com.artemis.World;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.bt.ptetrasos.Constants;
@@ -14,8 +14,6 @@ import com.bt.ptetrasos.systems.*;
  */
 public class GameScreen extends AbstractScreen {
     Game game;
-
-
 
     public GameScreen(Game game) {
         this.game = game;

@@ -18,7 +18,6 @@ public class AssetLoader {
 
     public AssetLoader() {
         typeClasses.put("png", Texture.class);
-        System.out.print(typeClasses.containsKey("png"));
         loadAssetsFromInternal(Constants.listing);
     }
 

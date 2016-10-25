@@ -22,6 +22,7 @@ allprojects {
         appName = "ptetrasos"
         gdxVersion = '1.9.4'
         aiVersion = '1.8.0'
+        artVersion = '1.4.0'
     }
 
     repositories {
@@ -40,7 +41,6 @@ project(":desktop") {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        //compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
     }
 }
 
@@ -51,9 +51,9 @@ project(":html") {
 
     dependencies {
         compile project(":core")
-        compile "net.onedaybeard.artemis:artemis-odb-gwt:1.4.0"
-        compile "net.onedaybeard.artemis:artemis-odb-gwt:1.4.0:sources"
-        compile "net.onedaybeard.artemis:artemis-odb:1.4.0:sources"
+        compile "net.onedaybeard.artemis:artemis-odb-gwt:$artVersion"
+        compile "net.onedaybeard.artemis:artemis-odb-gwt:$artVersion:sources"
+        compile "net.onedaybeard.artemis:artemis-odb:$artVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
@@ -65,7 +65,7 @@ project(":core") {
 
 
     dependencies {
-        compile "net.onedaybeard.artemis:artemis-odb:1.4.0"
+        compile "net.onedaybeard.artemis:artemis-odb:$artVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
