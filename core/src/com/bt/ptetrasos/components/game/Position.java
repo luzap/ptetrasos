@@ -7,10 +7,13 @@ import com.artemis.Component;
  * coordinates, converted to compensate for the viewing angle via the PositionSystem.
  */
 
-public class Position extends Component{
+public class Position extends Component {
 
     private static float x;
     private static float y;
+
+    public Position() {
+    }
 
     public Position(float x, float y) {
         Position.x = x;

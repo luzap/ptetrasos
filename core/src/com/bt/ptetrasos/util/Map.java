@@ -13,7 +13,7 @@ public class Map {
         mapObjects.add(mapObject);
     }
 
-    public void createFromFile(String filepath){
+    public void createFromFile(String filepath) {
 
     }
 }

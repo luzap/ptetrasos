@@ -5,7 +5,7 @@ import com.artemis.Component;
 /**
  * Component that stores the text of a GUI element
  */
-public class Text extends Component{
+public class Text extends Component {
 
     private String text;
 

@@ -5,7 +5,7 @@ import com.badlogic.gdx.assets.AssetManager;
 
 /**
  * Class that stores important constants.
- *
+ * <p>
  * Note that only static variables can be accessed from an un-instantiated object. So when adding variables, make
  * sure mutability is not a must.
  */

@@ -42,13 +42,13 @@ public class GenFileListing {
          */
         FileHandle directory = new FileHandle(dir);
         FileHandle[] filesInDir = directory.list();
-        for (FileHandle file: filesInDir) {
+        for (FileHandle file : filesInDir) {
             if (file.isDirectory()) {
                 getFilesFromDir(file.toString());
             } else {
                 String[] relPath = file.toString().split("(assets/)");
                 files.add(relPath[1]);
-                }
             }
         }
     }
+}

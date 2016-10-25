@@ -35,7 +35,7 @@ public class AssetLoader {
         // Generate an Iterator from the file, removing removing empty characters
         String[] assetList = Gdx.files.internal(listing).readString().split("[\r\n]");
 
-        for (String item: assetList){
+        for (String item : assetList) {
             if (item.length() > 0) {
                 String type = item.split("[.]")[1];
                 if (typeClasses.containsKey(type)) {
@@ -44,7 +44,7 @@ public class AssetLoader {
                     Gdx.app.debug("Asset", "loading asset " + item);
                 }
             }
-       }
+        }
     }
 }
 

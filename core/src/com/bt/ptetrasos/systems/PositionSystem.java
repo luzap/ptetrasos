@@ -1,7 +1,6 @@
 package com.bt.ptetrasos.systems;
 
 import com.artemis.Aspect;
-import com.artemis.BaseEntitySystem;
 import com.artemis.systems.IteratingSystem;
 import com.bt.ptetrasos.components.game.Position;
 
@@ -17,9 +16,11 @@ public class PositionSystem extends IteratingSystem {
         super(Aspect.all(Position.class));
     }
 
-    protected void insert() {}
+    protected void insert() {
+    }
 
-    protected void removed() {}
+    protected void removed() {
+    }
 
 
     @Override

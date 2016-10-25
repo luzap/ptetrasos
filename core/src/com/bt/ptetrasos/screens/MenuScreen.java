@@ -1,10 +1,9 @@
 package com.bt.ptetrasos.screens;
 
+import com.artemis.World;
 import com.artemis.WorldConfiguration;
 import com.artemis.WorldConfigurationBuilder;
 import com.badlogic.gdx.Game;
-import com.artemis.World;
-import com.bt.ptetrasos.systems.KinematicsSystem;
 import com.bt.ptetrasos.systems.PositionSystem;
 
 /**

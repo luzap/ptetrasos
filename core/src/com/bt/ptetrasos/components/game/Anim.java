@@ -20,6 +20,13 @@ public class Anim extends Component {
     private Boolean isStopped = false;
     private int age;
 
+    public Anim() {
+    }
+
+    public Anim(String animRef, int layer) {
+        this.animationReference = animRef;
+        setLayer(layer);
+    }
 
     public int getAge() {
         return age;
@@ -57,7 +64,6 @@ public class Anim extends Component {
         currentFrame += delta;
     }
 
-
     public Boolean isStopped() {
         return isStopped;
     }
@@ -65,7 +71,6 @@ public class Anim extends Component {
     public void setStopped(Boolean stopped) {
         isStopped = stopped;
     }
-
 
     public int getLayer() {
         return Layer;
@@ -75,17 +80,9 @@ public class Anim extends Component {
         Layer = layer;
     }
 
-    public Anim(String animRef, int layer) {
-        this.animationReference = animRef;
-        setLayer(layer);
-    }
-
-
     public Boolean getAnimationRepeating() {
         return animationRepeating;
     }
-
-
 
     public Boolean getForward() {
         return framesGoForward;
@@ -110,20 +107,13 @@ public class Anim extends Component {
         return animation;
     }
 
-
-    public void addEllapsedTime(float time){
+    public void addEllapsedTime(float time) {
         ellapsedTime += time;
     }
 
     public void setAnimation(Animation animation) {
         this.animation = animation;
     }
-
-
-
-
-
-
 
 
 }

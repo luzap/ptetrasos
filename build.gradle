@@ -22,7 +22,7 @@ allprojects {
         appName = "ptetrasos"
         gdxVersion = '1.9.4'
         aiVersion = '1.8.0'
-        artVersion = '1.4.0'
+        artVersion = '2.0.0'
     }
 
     repositories {

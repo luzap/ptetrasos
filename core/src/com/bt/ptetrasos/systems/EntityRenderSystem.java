@@ -4,11 +4,15 @@ import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
 import com.artemis.ComponentMapper;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.bt.ptetrasos.Constants;
 import com.bt.ptetrasos.components.game.Anim;
 import com.bt.ptetrasos.components.game.Bounds;
 import com.bt.ptetrasos.components.game.Position;
+import com.bt.ptetrasos.util.AnimationMaker;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +22,7 @@ import java.util.List;
 /**
  * Created by Titas on 2016-10-22.
  */
-public class EntityRenderSystem extends BaseEntitySystem{
+public class EntityRenderSystem extends BaseEntitySystem {
 
     public EntityRenderSystem() {
         super(Aspect.all(Position.class, Bounds.class).one(Anim.class));
@@ -49,8 +53,7 @@ public class EntityRenderSystem extends BaseEntitySystem{
             int comparisonValue = 0;
             if (layer1 < layer2) {
                 comparisonValue = -1;
-            }
-            else if (layer1 > layer2) {
+            } else if (layer1 > layer2) {
                 comparisonValue = 1;
             }
             return comparisonValue;
@@ -59,19 +62,17 @@ public class EntityRenderSystem extends BaseEntitySystem{
 
     }
 
-    protected void inserted (int e) {
+    protected void inserted(int e) {
         sortedEntities.add(e);
         entities_mixed = true;
         Gdx.app.debug(TAG, e + " was added");
     }
 
-    protected void removed (int e) {
+    protected void removed(int e) {
         sortedEntities.remove((Integer) e);
         Gdx.app.debug(TAG, e + " was removed");
 
     }
-
-
 
 
     @Override
@@ -95,11 +96,11 @@ public class EntityRenderSystem extends BaseEntitySystem{
 
         Anim anim = animationCm.get(e);
 
-//        if (animationCm.get(e).getAnimation() == null) {
-//            Texture texture = Constants.assets.get(anim.getAnimationReference());
-//            Animation animation = AnimationMaker.spriteSheetToAnimation(texture, 1, 1, 1);
-//            anim.setAnimation(animation);
-//        }
+        if (animationCm.get(e).getAnimation() == null) {
+            Texture texture = Constants.assets.get(anim.getAnimationReference());
+            Animation animation = AnimationMaker.spriteSheetToAnimation(texture, 1, 1, 1);
+            anim.setAnimation(animation);
+        }
 
         TextureRegion currentFrame = anim.getAnimation().getKeyFrame(anim.getAge());
 

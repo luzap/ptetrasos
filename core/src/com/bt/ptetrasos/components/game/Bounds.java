@@ -10,6 +10,9 @@ public class Bounds extends Component {
     public float width;
     public float height;
 
+    public Bounds() {
+    }
+
     public Bounds(float width, float height) {
         this.width = width;
         this.height = height;

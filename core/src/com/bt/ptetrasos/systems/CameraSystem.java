@@ -5,7 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 
-public class CameraSystem extends BaseSystem{
+public class CameraSystem extends BaseSystem {
     /**
      * This class serves to create a camera that will be used to scroll through the game.
      * This single camera is used everywhere throughout one world of the game.

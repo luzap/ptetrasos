@@ -16,7 +16,7 @@ public class AnimationMaker {
         TextureRegion currentFrame;
 
 
-        TextureRegion[][] tmp = TextureRegion.split(sheet, sheet.getWidth()/framecollumns, sheet.getHeight()/framerows);              // #10
+        TextureRegion[][] tmp = TextureRegion.split(sheet, sheet.getWidth() / framecollumns, sheet.getHeight() / framerows);              // #10
         frames = new TextureRegion[framecollumns * framerows];
         int index = 0;
         for (int i = 0; i < framerows; i++) {
