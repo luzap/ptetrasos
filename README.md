@@ -12,7 +12,7 @@ will launch a development server on port 8080 (not 9876 as Gradle claims). Note 
 - [ ] Rendering and position systems
   - [ ] Changing size based on y position (tentative)
   - [ ] Conversion of coordinates between 2D orthogonal and chosen view angle
-  - [ ] Recursively loading assets via AssetManager
+  - [x] Recursively loading assets via AssetManager (achieved via a text file containing a list of all assets)
   - [ ] Shader applications
 - [ ] Level rendering
   - [ ] Filetype and order of layers
