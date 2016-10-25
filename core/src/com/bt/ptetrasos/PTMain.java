@@ -4,7 +4,6 @@ import com.artemis.World;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.bt.ptetrasos.screens.GameScreen;
@@ -32,7 +31,6 @@ public class PTMain extends Game {
 
     World world;
     SpriteBatch batch;
-    AssetManager assets;
 
 
 	@Override
@@ -42,7 +40,7 @@ public class PTMain extends Game {
 		Gdx.graphics.setWindowedMode(800, 600);
 
         AssetLoader assetLoader = new AssetLoader();
-        assets = assetLoader.getAssetManager();
+        Constants.assets = assetLoader.getAssetManager();
 
         Constants.game = this;
 
@@ -51,7 +49,7 @@ public class PTMain extends Game {
 
     @Override
     public void render() {
-        Texture trial = assets.get("img/room/roombackground.png");
+        Texture trial = Constants.assets.get("img/room/roombackground.png");
         batch.begin();
         batch.draw(trial, 0, 0);
         batch.end();
