@@ -15,6 +15,8 @@ import com.artemis.BaseEntitySystem;
  * </ul>
  * <p>
  * Note that these can be chained together, and their interactions are similar to that of sets.
+ *
+ * Also, BaseSystem has no aspect, yet is still invoked.
  */
 
 public class KinematicsSystem extends BaseEntitySystem {

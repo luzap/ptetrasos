@@ -12,7 +12,6 @@ import com.artemis.BaseSystem;
  * <p>
  * For more types of systems, refer to the AbstractScreen.
  * <p>
- * TODO Write about Aspect
  */
 public class RenderSystem extends BaseSystem {
 

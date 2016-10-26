@@ -9,7 +9,8 @@ import com.badlogic.gdx.Screen;
  * <p>
  * The possible types of systems are:
  * <ul>
- * <li>BaseSystem - the most basic type of system. Every other system is subclass thereof.</li>
+ * <li>BaseSystem - the most basic type of system. Every other system is subclass thereof. Note that these do not
+ * take Aspect and are thus better used to implement overarching game logic.</li>
  * <li>IntervalSystem - entity system processed every certain interval.</li>
  * <li>DelayedIteratingSystem - tracks cooldown per entity, processing said entity when the timer runs out.</li>
  * <li>BaseEntitySystem - tracks an unsorted subset of entities.</li>
