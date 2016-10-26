@@ -10,13 +10,12 @@ import com.bt.ptetrasos.components.game.Position;
 /**
  * Created by Titas on 2016-10-21.
  */
-public class GameEntitySpawner extends EntitySpawner {
+public class GameEntitySpawner{
 
     protected TagManager tagManager;
 
     public static Entity spawnStaticImage(final World world, final float x, final float y,
                                           float width, float height, String animRef, int layer) {
-
         Entity entity = world.createEntity().edit()
                 .add(new Bounds(width, height))
                 .add(new Position(x, y))

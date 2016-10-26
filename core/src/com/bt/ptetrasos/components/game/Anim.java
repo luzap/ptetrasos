@@ -8,17 +8,21 @@ import com.badlogic.gdx.graphics.g2d.Animation;
  */
 public class Anim extends Component {
 
-    private String animationReference;
-
+    private int currentFrame = 0;
+    private int age;
     private int Layer;
 
-    private Animation animation = null;
+    private float maxFrameTime;
+    private float ellapsedTime = 0;
+
     private Boolean framesGoForward = true;
     private Boolean animationRepeating = false;
-    private int currentFrame = 0;
-    private float maxFrameTime;
     private Boolean isStopped = false;
-    private int age;
+
+    private String animationReference;
+
+    private Animation animation = null;
+
 
     public Anim() {
     }
@@ -100,8 +104,6 @@ public class Anim extends Component {
     public void setEllapsedTime(float ellapsedTime) {
         this.ellapsedTime = ellapsedTime;
     }
-
-    private float ellapsedTime = 0;
 
     public Animation getAnimation() {
         return animation;

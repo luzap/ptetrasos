@@ -4,7 +4,6 @@ import com.artemis.World;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.bt.ptetrasos.screens.GameScreen;
 import com.bt.ptetrasos.screens.MenuScreen;
@@ -47,13 +46,13 @@ public class PTMain extends Game {
         setScreen(new GameScreen(this));
     }
 
-    @Override
-    public void render() {
-        Texture trial = Constants.assets.get("img/room/roombackground.png");
-        batch.begin();
-        batch.draw(trial, 0, 0);
-        batch.end();
-    }
+//    @Override
+//    public void render() {
+//        Texture trial = Constants.assets.get("img/room/roombackground.png");
+//        batch.begin();
+//        batch.draw(trial, 0, 0);
+//        batch.end();
+//    }
 
     // Simple format for switching between screens
     public void showMenuScreen() {

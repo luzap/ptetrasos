@@ -45,19 +45,15 @@ public class GameWorldMapSystem extends BaseSystem {
 
         Gdx.app.debug(TAG, "activeMap changed");
         cameraSystem.reset();
-
-
     }
 
 
     @Override
     protected void processSystem() {
-
         if (!isSetup) {
-            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-Floor.png", 1);
-            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-Background.png", 0);
-            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/Room-BackWall.png", 2);
-            // Gdx.app.debug("Position", Position.class.toString());
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/room_floor.png", 1);
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/room_background.png", 0);
+            GameEntitySpawner.spawnStaticImage(Constants.gameWorld, 0, 0, 800, 600, "img/room/room_backwall.png", 2);
             isSetup = true;
         }
     }

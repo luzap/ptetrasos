@@ -25,8 +25,7 @@ public class Image extends Component {
     private Sprite image;
     private int layer;
 
-    public Image() {
-    }
+    public Image() {}
 
     public Image(Texture texture) {
         this.image = image;
