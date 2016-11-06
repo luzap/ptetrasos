@@ -3,17 +3,14 @@ package com.bt.ptetrasos.components.ui;
 import com.artemis.Component;
 
 /**
- * Component that stores the text of a GUI element
+ * Created by Lukas on 06-Nov-16.
  */
 public class Text extends Component {
+    String text;
 
-    private String text;
+    public Text() {}
 
     public Text(String text) {
         this.text = text;
-    }
-
-    public String getText() {
-        return text;
     }
 }

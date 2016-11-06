@@ -18,6 +18,5 @@ public class RenderSystem extends BaseSystem {
 
     @Override
     protected void processSystem() {
-
     }
 }

@@ -27,7 +27,6 @@ public class CameraSystem extends BaseSystem {
         camera = new OrthographicCamera(Gdx.graphics.getWidth() * ZOOM, Gdx.graphics.getHeight() * ZOOM);
         camera.setToOrtho(false, Gdx.graphics.getWidth() * ZOOM, Gdx.graphics.getHeight() * ZOOM);
         camera.update();
-
     }
 
     @Override

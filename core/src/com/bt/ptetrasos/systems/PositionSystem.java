@@ -25,7 +25,6 @@ public class PositionSystem extends IteratingSystem {
 
     @Override
     protected void process(int e) {
-
     }
 
 

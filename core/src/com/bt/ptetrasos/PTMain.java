@@ -46,13 +46,6 @@ public class PTMain extends Game {
         setScreen(new GameScreen(this));
     }
 
-//    @Override
-//    public void render() {
-//        Texture trial = Constants.assets.get("img/room/roombackground.png");
-//        batch.begin();
-//        batch.draw(trial, 0, 0);
-//        batch.end();
-//    }
 
     // Simple format for switching between screens
     public void showMenuScreen() {

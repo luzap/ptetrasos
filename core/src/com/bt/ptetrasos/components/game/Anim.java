@@ -13,7 +13,7 @@ public class Anim extends Component {
     private int Layer;
 
     private float maxFrameTime;
-    private float ellapsedTime = 0;
+    private float elapsedTime = 0;
 
     private Boolean framesGoForward = true;
     private Boolean animationRepeating = false;
@@ -96,13 +96,13 @@ public class Anim extends Component {
         this.framesGoForward = framesGoForward;
     }
 
-    public float getEllapsedTime() {
-        return ellapsedTime;
+    public float getElapsedTime() {
+        return elapsedTime;
     }
 
 
-    public void setEllapsedTime(float ellapsedTime) {
-        this.ellapsedTime = ellapsedTime;
+    public void setElapsedTime(float elapsedTime) {
+        this.elapsedTime = elapsedTime;
     }
 
     public Animation getAnimation() {
@@ -110,7 +110,7 @@ public class Anim extends Component {
     }
 
     public void addEllapsedTime(float time) {
-        ellapsedTime += time;
+        elapsedTime += time;
     }
 
     public void setAnimation(Animation animation) {

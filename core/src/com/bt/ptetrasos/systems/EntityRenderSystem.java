@@ -78,7 +78,7 @@ public class EntityRenderSystem extends BaseEntitySystem {
     @Override
     protected void processSystem() {
         if (entities_mixed) {
-            entities_mixed = false;
+            entities_mixed = !entities_mixed; // Can also do entities_mixed ^= 1
             Collections.sort(sortedEntities, new layerSortComperator());
         }
         for (int e : sortedEntities) {
@@ -95,6 +95,7 @@ public class EntityRenderSystem extends BaseEntitySystem {
         float height = boundsCm.get(e).getHeight();
 
         Anim anim = animationCm.get(e);
+
 
         if (animationCm.get(e).getAnimation() == null) {
             Texture texture = Constants.assets.get(anim.getAnimationReference());
