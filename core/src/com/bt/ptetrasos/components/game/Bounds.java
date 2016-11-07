@@ -7,8 +7,8 @@ import com.artemis.Component;
  */
 public class Bounds extends Component {
 
-    public float width;
-    public float height;
+    private float width;
+    private float height;
 
     public Bounds() {
     }

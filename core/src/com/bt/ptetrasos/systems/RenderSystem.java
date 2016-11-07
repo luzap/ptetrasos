@@ -1,6 +1,7 @@
 package com.bt.ptetrasos.systems;
 
 import com.artemis.BaseSystem;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * System that renders anything with an Image component associated with it.
@@ -15,6 +16,7 @@ import com.artemis.BaseSystem;
  */
 public class RenderSystem extends BaseSystem {
 
+    SpriteBatch spriteBatch;
 
     @Override
     protected void processSystem() {

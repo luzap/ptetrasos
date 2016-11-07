@@ -13,4 +13,8 @@ public class Text extends Component {
     public Text(String text) {
         this.text = text;
     }
+
+    public String getText() {
+        return text;
+    }
 }
